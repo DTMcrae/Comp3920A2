@@ -484,7 +484,7 @@ app.get('/chatroom', async (req, res) => {
     {
         for(var i = 0; i < result[0].length; i++)
         {
-            html += await processMessage(req, result[0][i], i + 1, reactions[0]);
+            html += await processMessage(req, result[0][i], result[0][i].message_id, reactions[0]);
         }
     }
     else
