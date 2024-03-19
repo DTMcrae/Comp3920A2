@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-mongo": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "joi": "^17.9.2",
+    "mongodb": "^5.3.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.1",
+    "nodemon": "^2.0.22"
+  },
+  "name": "a1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "DTMcRae",
+  "license": "ISC",
+  "description": ""
+}
