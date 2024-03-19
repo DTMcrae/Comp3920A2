@@ -99,7 +99,11 @@ app.post('/signupSubmit', async (req, res) => {
     var password = req.body.password;
 
     const nameSchema = Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9_]*$'));
-    const passSchema = Joi.string().required();
+    const passSchema = Joi
+    .string()
+    .min(8) // Minimum length of 8 characters
+    .pattern(new RegExp('(?=.*[A-Z])')) // At least one uppercase letter
+    .pattern(new RegExp('(?=.*[!@#$%^&*()_+-=[\\]{};,.?])'));
 
     if((nameSchema.validate(username)).error != null)
     {
@@ -112,7 +116,7 @@ app.post('/signupSubmit', async (req, res) => {
     }
     else if (passSchema.validate(password).error != null) {
         res.send(`
-        A password is required.
+        Password must be at least 8 characters long, with at least one uppercase letter, one number, and one symbol.
         <br><br>
         <a href="/signup">Try again</a>
         `);
